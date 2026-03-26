@@ -60,3 +60,17 @@
 .animate-fadeIn {
   animation: fadeIn 0.2s ease;
 }
+
+/* Sidebar Scroll */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}

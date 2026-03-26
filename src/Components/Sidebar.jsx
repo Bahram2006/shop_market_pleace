@@ -193,32 +193,33 @@ function Sidebar() {
   const [active, setActive] = useState(null);
 
   return (
-    <div className="w-[260px] bg-white shadow-lg border-r fixed top-16 left-0 h-[calc(100vh-64px)]">
+    <div className="w-[260px] fixed top-16 left-0 h-[calc(100vh-64px)] bg-white shadow-lg border-r overflow-x-visible">
+      
       {/* HEADER */}
-      <div className="bg-gradient-to-r from-red-600 to-red-500 text-white p-3 font-bold text-sm rounded-t">
+      <div className="bg-gradient-to-r from-red-600 to-red-500 text-white p-3 font-bold text-sm">
         Tüm Ürünler
       </div>
 
       {/* MENU */}
       <div className="text-sm">
         {categories.map((cat, index) => (
+          
+          /* 🔥 MAIN WRAPPER */
           <div
             key={index}
+            className="relative"
             onMouseEnter={() => setActive(index)}
             onMouseLeave={() => setActive(null)}
-            className="relative group"
           >
+
             {/* CATEGORY */}
-            <div
-              className="flex justify-between items-center px-4 py-2.5 
+            <div className="flex justify-between items-center px-4 py-2.5 
               text-gray-700 border-b cursor-pointer
               hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50
               transition-all duration-200"
             >
               <span className="font-medium">{cat.name}</span>
-              <span className="text-gray-400 group-hover:text-blue-500 transition">
-                ›
-              </span>
+              <span className="text-gray-400">›</span>
             </div>
 
             {/* MEGA MENU */}
@@ -228,7 +229,9 @@ function Sidebar() {
                 shadow-2xl border rounded-lg p-5 z-50 
                 animate-fadeIn max-h-[500px] overflow-y-auto"
               >
-                <h4 className="font-semibold mb-3 text-gray-800">{cat.name}</h4>
+                <h4 className="font-semibold mb-3 text-gray-800">
+                  {cat.name}
+                </h4>
 
                 <div className="space-y-1">
                   {cat.items.map((item, i) => (
@@ -243,6 +246,7 @@ function Sidebar() {
                 </div>
               </div>
             )}
+
           </div>
         ))}
       </div>

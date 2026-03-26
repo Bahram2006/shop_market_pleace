@@ -16,7 +16,7 @@ function App() {
         <Navbar />
 
         {/* MAIN LAYOUT */}
-        <div className="pt-16 flex">
+        <div className="pt-16 flex overflow-visible">
 
           {/* SIDEBAR */}
           <Sidebar />
