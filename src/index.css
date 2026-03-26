@@ -1,30 +1,62 @@
 @import "tailwindcss";
 
-.nav-link {
-  @apply relative text-gray-700 font-medium transition duration-300;
+/* SIDEBAR CONTAINER */
+.sidebar {
+  @apply w-[260px] bg-white min-h-screen shadow-lg border-r;
 }
 
-.nav-link::after {
-  content: "";
-  @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300;
+/* HEADER */
+.sidebar-header {
+  @apply bg-gradient-to-r from-red-600 to-red-500 text-white p-3 font-bold rounded-t;
 }
 
-.nav-link:hover::after {
-  @apply w-full;
+/* CATEGORY ITEM */
+.sidebar-item {
+  @apply flex justify-between items-center px-4 py-2.5 text-gray-700 
+  hover:bg-gray-100 cursor-pointer border-b transition-all duration-200;
 }
 
-.menu-title {
-  @apply font-semibold mb-2 text-gray-900;
+/* CATEGORY TEXT */
+.sidebar-text {
+  @apply text-sm font-medium;
 }
 
-.menu-item {
-  @apply text-gray-600 cursor-pointer hover:text-blue-500 transition duration-200;
+/* ARROW */
+.sidebar-arrow {
+  @apply text-gray-400 group-hover:text-blue-500 transition;
 }
 
-.btn-primary {
-  @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition;
+/* MEGA MENU */
+.mega-menu {
+  @apply absolute left-full top-0 w-[320px] bg-white shadow-2xl p-5 z-50 rounded-lg border animate-fadeIn;
 }
 
-.btn-outline {
-  @apply px-4 py-2 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition;
+/* MEGA ITEM */
+.mega-item {
+  @apply py-1.5 text-gray-600 hover:text-blue-500 cursor-pointer transition text-sm;
+}
+
+/* SCROLL (IMPORTANT for big lists) */
+.mega-menu {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* SCROLLBAR */
+.mega-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.mega-menu::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease;
 }
